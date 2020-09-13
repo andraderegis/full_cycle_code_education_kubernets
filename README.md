@@ -1,0 +1,1 @@
+# full_cycle_code_education_kubernets
