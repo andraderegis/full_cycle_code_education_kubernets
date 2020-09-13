@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name:  nginx-service-example
+spec:
+  selector:
+    app:  nginx-deployment-example
+  type:  LoadBalancer
+  ports:
+    - port:  80
+
+    
