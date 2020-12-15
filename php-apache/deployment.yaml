@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: php-apache-hpa
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: php-apache-hpa
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        app: php-apache-hpa
+        tier: frontend
+    spec:
+      containers:
+        - name: php-apache-hpa
+          image: andradereginaldo/code-education-php-apache-hpa
+          ports:
+            - containerPort: 80
+          resources:
+            limits:
+              cpu: 200m
+            requests:
+              cpu: 200m
+              
